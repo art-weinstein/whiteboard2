@@ -107,4 +107,18 @@ function uniqueCharacters(str)
 }
 
 //Q5
-// 
+// try to recreate a bubbleSort
+
+function sort(arr){
+  // let sortArr = [];
+  var done = false;
+  while(!done){
+    done = true;
+    for (let i = 0; i < arr.length; i++){
+      if (arr[i - 1] > arr[i]){
+        done = false;
+        temp = arr[i -1];
+      }
+    }
+  }
+}
