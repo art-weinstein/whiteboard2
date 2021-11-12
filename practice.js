@@ -31,31 +31,36 @@ function nameEnhancer(prefix, name){
   }
 }
 
+//Q1
+// array will split spaces and replace them with %20 through the join command, code will then return the replaced string
 function createURL(str){
   var replace = str.split(" ").join("%20");
   return replace;
 }
 
-function compressArr(arr){
-  var newArr = [];
-  for (var i = 0; i < arr.length; i++){
-    if (newArr.indexOf(arr[i]) === -1){} {
-      newArr.push(arr[i]);
-    }
-  }
-  return newArr;
-}
+// function compressArr(arr){
+//   var newArr = [];
+//   for (var i = 0; i < arr.length; i++){
+//     if (newArr.indexOf(arr[i]) === -1){} {
+//       newArr.push(arr[i]);
+//     }
+//   }
+//   return newArr;
+// }
 
-function removeDuplicates(arr){
-  let uniqueArr = [];
-  arr.forEach((i) => {
-      if (!uniqueArr.includes(i)) {
-          uniqueArr.push(i);
-      }
-  });
-  return uniqueArr;
-}
+// function removeDuplicates(arr){
+//   let uniqueArr = [];
+//   arr.forEach((i) => {
+//       if (!uniqueArr.includes(i)) {
+//           uniqueArr.push(i);
+//       }
+//   });
+//   return uniqueArr;
+// }
 
+//Q2
+// function will initialize an empty array, the forEach loop will increment through every element in the array. The if statement checks if the current element
+// is not in the unique array, and pushes it. Once the loop is finished, it will return the pushed uniqueArr.
 function removeDuplicates(arr){
   let uniqueArr = [];
   arr.forEach((element) => {
@@ -66,6 +71,8 @@ function removeDuplicates(arr){
   return uniqueArr;
 }
 
+
+//Q3, work in progress
 function compressStr(str){
   let n = str.length;
   for (let i = 0; i < n; i++){
@@ -78,19 +85,26 @@ function compressStr(str){
   }
 }
 
-function printRLE(str)
-{
-    let n = str.length;
-    for (let i = 0; i < n; i++)
-    {
-        // Count occurrences of current character
-        let count = 1;
-        while (i < n - 1 && str[i] == str[i+1])
-        {
-            count++;
-            i++;
+
+//Q4
+// The first for loop is incremented at the first letter, the nested loop checks the rest of the subsequent letters if they match the letter in the first for loop
+// if no match is detected, the initial for loop increments to the next letter, and the nested for loop repeats and checks the subsequent letters for a duplicate.
+// to break the loop, the return statement of false is within the nested for loop, so that once a duplicate letter is detected, the code will terminate and return false.
+// if no duplicates are detected, the first loop will finish and end with true once all the parameters are met. 
+function uniqueCharacters(str)
+{    
+    // If at any time we encounter 2
+    // same characters, return false
+    for(let i = 0; i < str.length; i++){
+        for(let j = i + 1; j < str.length; j++){
+            if (str[i].toLowerCase() == str[j].toLowerCase())
+                return false;
         }
-        // Print character and its count
       }
-      return (str[i]) + (count);
+    // If no duplicate characters
+    // encountered, return true
+    return true;
 }
+
+//Q5
+// 
