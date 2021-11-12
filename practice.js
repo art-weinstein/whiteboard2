@@ -117,8 +117,11 @@ function sort(arr){
     for (let i = 0; i < arr.length; i++){
       if (arr[i - 1] > arr[i]){
         done = false;
-        temp = arr[i -1];
+        var temp = arr[i -1];
+        arr[i - 1] = arr[i];
+        arr[i] = temp;
       }
     }
   }
+  return arr;
 }
