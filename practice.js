@@ -106,6 +106,16 @@ function uniqueCharacters(str)
     return true;
 }
 
+function uniqueRecursive(str)
+{
+  if(str.length < 0){
+    return;
+  }
+  if (str.length < 0){
+    
+  }
+}
+
 //Q5
 // try to recreate a bubbleSort
 

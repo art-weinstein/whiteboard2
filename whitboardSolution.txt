@@ -1,0 +1,21 @@
+// check a string for uniqueness, if any character is repeated, boolean will return, otherwise return true.
+// no ints or special characters will be used
+// can't convert string into array or use any array methods
+// keep the string inputted as is, no converting
+// is case sensitive
+
+
+// JavaScript
+
+
+//Hello should return false
+function uniqueCharacters(str){
+  for(let i = 0; i <str.length; i++){
+     for (let j = i + 1; j < str.length; j++) {
+        if (str[i].toLowerCase() == str[j].toLowerCase()){
+          return false;
+      }
+    }	
+  }
+   return true;
+}
